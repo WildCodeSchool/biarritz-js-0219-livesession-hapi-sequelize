@@ -15,8 +15,17 @@ describe("# USERS", () => {
   it("responds with 200", async () => {
     const res = await server.inject({
       method: "get",
-      url: "/"
+      url: "/users"
     });
     expect(res.statusCode).to.equal(200);
+  });
+
+  it("responds a user list", async () => {
+    const res = await server.inject({
+      method: "get",
+      url: "/users"
+    });
+    const payload = JSON.parse(res.payload);
+    expect(payload).to.equal([]);
   });
 });
