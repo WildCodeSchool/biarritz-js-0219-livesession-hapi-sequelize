@@ -1,0 +1,23 @@
+{
+  "name": "biarritz-js-0219-livesession-hapi-sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lol": "echo 'lol' "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildCodeSchool/biarritz-js-0219-livesession-hapi-sequelize.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/biarritz-js-0219-livesession-hapi-sequelize/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool/biarritz-js-0219-livesession-hapi-sequelize#readme",
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  }
+}
