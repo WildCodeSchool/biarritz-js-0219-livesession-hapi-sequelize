@@ -16,6 +16,8 @@ server.route({
   }
 });
 
+server.route(require("./resources/users/users.route"));
+
 exports.init = async () => {
   await server.initialize();
   return server;
