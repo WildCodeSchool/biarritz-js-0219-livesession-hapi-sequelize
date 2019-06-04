@@ -2,7 +2,17 @@
 
 const Hapi = require("@hapi/hapi");
 
+const connect = require("./db/connect");
+
 const init = async () => {
+  const sequelize = await connect();
+  try {
+    await sequelize.authenticate();
+    console.log("Connection has been established successfully.");
+  } catch (err) {
+    console.error("Unable to connect to the database:", err);
+  }
+
   const server = Hapi.server({
     port: 3000,
     host: "localhost"
