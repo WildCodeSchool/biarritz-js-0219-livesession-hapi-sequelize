@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --watch",
+    "test": "mocha",
     "start": "nodemon index.js"
   },
   "repository": {
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/WildCodeSchool/biarritz-js-0219-livesession-hapi-sequelize#readme",
   "devDependencies": {
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "should": "^13.2.3"
   },
   "dependencies": {
     "@hapi/hapi": "^18.3.1",

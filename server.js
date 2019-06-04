@@ -8,15 +8,7 @@ const server = Hapi.server({
   host: "localhost"
 });
 
-server.route({
-  method: "GET",
-  path: "/",
-  handler: function() {
-    return "Hello World!";
-  }
-});
-
-server.route(require("./resources/users/users.route"));
+server.route(require("./resources/users/users.routes"));
 
 exports.init = async () => {
   await server.initialize();

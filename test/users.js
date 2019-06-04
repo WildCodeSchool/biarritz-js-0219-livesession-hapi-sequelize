@@ -1,4 +1,4 @@
-const expect = require("expect.js");
+const should = require("should");
 const { init } = require("../server");
 
 describe("# USERS", () => {
@@ -17,7 +17,7 @@ describe("# USERS", () => {
       method: "GET",
       url: "/users"
     });
-    expect(res.statusCode).to.equal(200);
+    should(res.statusCode).equal(200);
   });
 
   it("responds an empty user list", async () => {
@@ -26,7 +26,7 @@ describe("# USERS", () => {
       url: "/users"
     });
     const payload = JSON.parse(res.payload);
-    expect(payload).to.equal([]);
+    should(payload).deepEqual([]);
   });
 
   it("responds a user list with two users", async () => {
@@ -43,6 +43,6 @@ describe("# USERS", () => {
       url: "/users"
     });
     const payload = JSON.parse(res.payload);
-    expect(payload).to.equal([user1, user2]);
+    should(payload).equal([user1, user2]);
   });
 });
