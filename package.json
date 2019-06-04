@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "lol": "echo 'lol' "
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "homepage": "https://github.com/WildCodeSchool/biarritz-js-0219-livesession-hapi-sequelize#readme",
   "devDependencies": {
     "mocha": "^6.1.4"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^18.3.1",
+    "nodemon": "^1.19.1"
   }
 }
