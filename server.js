@@ -8,15 +8,18 @@ const server = Hapi.server({
   host: "localhost"
 });
 
-server.route(require("./resources/users/users.routes"));
+server.route(require("./resources/users/user.routes"));
 
 exports.init = async () => {
+  const sequelize = require("./db/connect");
+  await sequelize.sync({ force: true });
   await server.initialize();
   return server;
 };
 
 exports.start = async () => {
-  const sequelize = await connect();
+  const sequelize = require("./db/connect");
+  await sequelize.sync();
   try {
     await sequelize.authenticate();
     console.log("Connection has been established successfully.");

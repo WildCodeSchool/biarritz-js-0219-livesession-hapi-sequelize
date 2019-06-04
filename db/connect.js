@@ -1,10 +1,11 @@
 const Sequelize = require("sequelize");
 
-async function connect() {
-  return new Sequelize("api", "admin", "admin", {
-    host: "localhost",
-    dialect: "mysql"
-  });
+let dbName = "api";
+if (process.env.NODE_ENV === "test") {
+  dbName = "api_test";
 }
 
-module.exports = connect;
+module.exports = new Sequelize(dbName, "admin", "admin", {
+  host: "localhost",
+  dialect: "mysql"
+});
