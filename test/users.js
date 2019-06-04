@@ -14,18 +14,35 @@ describe("# USERS", () => {
 
   it("responds with 200", async () => {
     const res = await server.inject({
-      method: "get",
+      method: "GET",
       url: "/users"
     });
     expect(res.statusCode).to.equal(200);
   });
 
-  it("responds a user list", async () => {
+  it("responds an empty user list", async () => {
     const res = await server.inject({
-      method: "get",
+      method: "GET",
       url: "/users"
     });
     const payload = JSON.parse(res.payload);
     expect(payload).to.equal([]);
+  });
+
+  it("responds a user list with two users", async () => {
+    const user1 = {
+      email: "testuserone@toto.com",
+      name: "userone"
+    };
+    const user2 = {
+      email: "testusertwo@toto.com",
+      name: "usertwo"
+    };
+    const res = await server.inject({
+      method: "GET",
+      url: "/users"
+    });
+    const payload = JSON.parse(res.payload);
+    expect(payload).to.equal([user1, user2]);
   });
 });
